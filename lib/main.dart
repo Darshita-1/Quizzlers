@@ -93,7 +93,7 @@ class _QuizPageState extends State<QuizPage> {
               textColor: Colors.white,
               color: Colors.green,
               child: Text(
-                'True',
+                q2.re(),
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
@@ -109,19 +109,22 @@ class _QuizPageState extends State<QuizPage> {
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              color: Colors.red,
-              child: Text(
-                'False',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.white,
+            child: Visibility(
+              visible: q2.vis(),
+              child: FlatButton(
+                color: Colors.red,
+                child: Text(
+                  'False',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.white,
+                  ),
                 ),
+                onPressed: () {
+                  scorekeeper(false);
+                  //The user picked false.
+                },
               ),
-              onPressed: () {
-                scorekeeper(false);
-                //The user picked false.
-              },
             ),
           ),
         ),

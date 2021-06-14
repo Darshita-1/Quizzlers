@@ -2,7 +2,6 @@ import 'Ques.dart';
 
 class QuesBank {
   int _n = 0;
-  int l;
   List<Ques> _q1 = [
     Ques(
       'A slug\'s blood is green.',
@@ -55,6 +54,20 @@ class QuesBank {
     } else {
       return false;
     }
+  }
+
+  bool vis() {
+    if (_n == 15)
+      return false;
+    else
+      return true;
+  }
+
+  String re() {
+    if (_n == 15)
+      return 'PRESS';
+    else
+      return 'True';
   }
 
   void reset() {
